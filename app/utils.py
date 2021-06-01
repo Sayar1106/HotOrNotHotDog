@@ -19,11 +19,11 @@ def predict_hotdog(image) -> Dict:
     is_hotdog, _ , probs = inference_model.predict(image)
     if probs[1] > 0.5:
         return {
-            "image": "hotdog",
+            "prediction": "hotdog",
             "probability": probs[1].item()
         }
     
     return {
-        "image": "not hotdog",
+        "prediction": "not hotdog",
         "probability": probs[0].item()
     }
